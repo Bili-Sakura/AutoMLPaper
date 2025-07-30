@@ -20,3 +20,7 @@ python convert_to_latex.py <PDF_URL> --out output_directory
 
 The script submits a conversion task, waits for completion and downloads the
 resulting ZIP archive containing the LaTeX files into `output_directory`.
+
+## Development
+
+Refer to [AGENTS.md](AGENTS.md) for repository guidelines and contribution notes.
