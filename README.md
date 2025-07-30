@@ -43,6 +43,27 @@ python convert_to_latex.py <PDF_URL> --out output_directory
 The script submits a conversion task, waits for completion and downloads the
 resulting ZIP archive containing the LaTeX files into `output_directory`.
 
+## Automatic Manuscript Generation
+
+The `write_manuscript.py` script orchestrates the full workflow from searching
+for papers to producing a LaTeX manuscript. It performs the following steps:
+
+1. Search for related papers using the OpenAI API.
+2. Group and rank the results.
+3. Download each PDF and convert it to LaTeX with Mineru.
+4. Extract Markdown notes from the LaTeX sources.
+5. Ask the OpenAI API to draft a new LaTeX manuscript from the notes.
+
+### Usage
+
+```bash
+export OPENAI_API_KEY=your_openai_key
+export API_KEY=your_mineru_token
+python write_manuscript.py "neural architecture search" -n 3 --manuscript output.tex
+```
+
+The generated manuscript will be saved to `output.tex`.
+
 
 ## arXiv LaTeX Template
 
